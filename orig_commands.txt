@@ -1,0 +1,176 @@
+	
+#
+# Declaracao de comandos
+#
+
+#--------------------------------------------- pacotes
+
+# Common (sem classificacao especifica, porem util)
+#@	common/beep
+
+
+# Shell-color
+	shellcolor/cursor_on
+	shellcolor/cursor_off
+
+
+	shellcolor/lineclear
+	shellcolor/linereturn
+
+
+	shellcolor/shcolor
+		echo_danger:shcolor
+		echo_done:shcolor
+		echo_failure:shcolor
+		echo_started:shcolor
+		echo_stopped:shcolor
+		echo_success:shcolor
+		echo_skip:shcolor
+		echo_warning:shcolor
+		echo_ok:shcolor
+
+	shellcolor/echo_xdot
+
+	shellcolor/shlog
+		logit:shlog
+		logit0:shlog
+		logit1:shlog
+		logit2:shlog
+		logit3:shlog
+
+		logitr:shlog
+		logitg:shlog
+		logity:shlog
+		logitb:shlog
+		logitp:shlog
+		logitc:shlog
+		logitw:shlog
+		logita:shlog
+
+
+
+	shellcolor/echoc
+	shellcolor/setcolor
+
+
+	shellcolor/shloading
+
+
+# NETWORK
+	network/arp-monitor
+	network/getaddrinfo
+	network/getethmac
+	network/gethost_ipv4
+	network/gethost_ipv6
+	network/gethostbyname
+	network/gethostbyname2
+	network/ipv4_op
+	network/ipv4_brd
+	network/ipv4_net
+	network/is_ipv4hmask
+	network/ipv4aton
+	network/ipv4read
+	network/ipv4reverse
+	network/ipv4srcget
+	network/ipv4_hmask2prefix
+	network/ipv6_padd
+	network/ipv6bytesread
+	network/ipv6calc
+	network/ipv6fullread
+	network/ipv6hexread
+	network/ipv6kread
+	network/ipv6pinfo
+	network/ipv6read
+	network/ipv6reverse
+	network/ipversion
+	network/is_fqdn
+	network/is_dnshost
+	network/is_ipv4
+	network/is_ipv4port
+	network/is_ipv4prefix
+	network/is_ipv6
+	network/is_ipv6port
+	network/is_ipv6prefix
+	network/is_mac
+	network/is_maclinux
+	network/mac_read
+	network/readadrport
+	network/setethmac
+
+
+# STRINGS
+	strings/countchar
+	strings/dechex
+	strings/hexdec
+	strings/fileextension
+	strings/getipbitmask
+	strings/getipmask
+	strings/in_list
+	strings/in_listi
+	strings/in_list_like
+	strings/in_str
+	strings/is_int
+	strings/is_numeric
+	strings/in_wordlist
+	strings/strlike
+	strings/fstrdup
+	strings/strcut
+	strings/str_replace
+	strings/strlen
+	strings/str_repeat
+	strings/str_hbytes
+	strings/str_reverse
+	strings/str_lower
+	strings/str_upper
+	strings/str_cmpi
+	strings/in_numrange
+	strings/str_onlychars
+	strings/str_regex
+	strings/str_iregex
+
+
+# Criptografia e conversao de formato
+	crypto/hex_encode
+	crypto/hex_decode
+
+
+# Sistema de arquivos
+	filesystem/filesize
+	filesystem/sumfilesize
+
+
+# Linux
+	linux/pidfilecheck
+	linux/wait_for_pid
+	linux/ps_name_exist
+	linux/cpucount
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
