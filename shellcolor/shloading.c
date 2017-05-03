@@ -22,20 +22,6 @@ Barra.......: restante, 1 byte para '[', barra, 1 bytes para ']'
 void help_shloading(){
 	printf("Use: ./youscript | shloading -l (pre-label) -t (title) -m (total-lines) [-s style] [-d udelay] [-n]");
 	printf("\n");
-	printf("Formato:\n");
-	//       1     2   3     4   5      6 7 8 9       a  b  c d e            f g                                 h  i j
-	printf("\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.79 %%   %s%s                                %s%s]%s\n",
-		ANSI_LIGHT, ANSI_RESET,					// label 1 2
-		ANSI_CIANOL, ANSI_RESET,				// title 2 3
-		ANSI_PRETOL, ANSI_RESET,				// count 5 6
-		ANSI_LIGHT, ANSI_RESET,					// / 7 8
-		ANSI_BRANCO, ANSI_RESET,				// total 9 a
-		ANSI_LIGHT, ANSI_RESET,					// border b c
-		ANSI_BCIANO, ANSI_CIANOL,				// fill bg e font, d e
-		ANSI_BAZUL, ANSI_AZULL, ANSI_RESET,		// zero bg e font, f g h
-		ANSI_LIGHT, ANSI_RESET    				 // border, i j
-	);
-	printf("\n");
 	printf("Opcoes:\n");
 	printf("    -n                 Nao efetuar quebra de linha apos concluir\n");
 	printf("    -c                 Limpar linha apos concluir\n");
@@ -44,9 +30,135 @@ void help_shloading(){
 	printf("    -m TOTAL           Numero total de linhas esperadas no STDIN\n");
 	printf("    -d DELAY           Induzir delay em micro-segundos entre linhas do STDIN\n");
 	printf("    -s STYLE           Numero do estilo:\n");
-	printf("                       1 - branco | ciano | cinza | branco | azul claro | azul escuro\n");
-	printf("                       2 - branco | ciano | cinza | branco | azul claro | azul escuro\n");
-	printf("                       3 - branco | ciano | cinza | branco | azul claro | azul escuro\n");
+
+	printf("\t\t1:\n");
+	//       1      2  3      4  5      6 7  8 9      a  b  c d e     f g                                         h i  j
+	printf("\t\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.%s%s79 %%                                   %s%s]%s\n",
+		ANSI_LIGHT, ANSI_RESET,					// label 1 2
+		ANSI_CIANOL, ANSI_RESET,				// title 3 4
+		ANSI_PRETOL, ANSI_RESET,				// count 5 6
+		ANSI_LIGHT, ANSI_RESET,					// border: / 7 8
+		ANSI_BRANCO, ANSI_RESET,				// total 9 a
+		ANSI_LIGHT, ANSI_RESET,					// border b c
+		ANSI_BCIANO, ANSI_CIANOL,				// fill bg e font, d e
+		ANSI_BAZUL, ANSI_AZULL,					// empty bg e font, f g
+		ANSI_RESET, ANSI_LIGHT, 				// zero bg e font, h, i
+		ANSI_RESET    							// reset end, j
+	);
+	printf("\t\t2:\n");
+	//       1      2  3      4  5      6 7  8 9      a  b  c d e     f g                                         h i  j
+	printf("\t\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.%s%s79 %%                                   %s%s]%s\n",
+		ANSI_LIGHT, ANSI_RESET,				// label 1 2
+		ANSI_AMARELOL, ANSI_RESET,				// title 3 4
+		ANSI_PRETOL, ANSI_RESET,				// count 5 6
+		ANSI_AMARELOL, ANSI_RESET,				// border: / 7 8
+		ANSI_PRETOL, ANSI_RESET,				// total 9 a
+		ANSI_AMARELOL, ANSI_RESET,				// border b c
+		ANSI_BVERMELHO, ANSI_VERMELHOL,			// fill bg e font, d e
+		ANSI_BPRETO, ANSI_PRETOL,				// empty bg e font, f g
+		ANSI_RESET, ANSI_AMARELOL,				// zero bg e font, h, i
+		ANSI_RESET    							// reset end, j
+	);
+	printf("\t\t3:\n");
+	//       1      2  3      4  5      6 7  8 9      a  b  c d e     f g                                         h i  j
+	printf("\t\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.%s%s79 %%                                   %s%s]%s\n",
+		ANSI_LIGHT, ANSI_RESET,					// label 1 2
+		ANSI_VERDEL, ANSI_RESET,				// title 3 4
+		ANSI_PRETOL, ANSI_RESET,				// count 5 6
+		ANSI_VERDEL, ANSI_RESET,				// border: / 7 8
+		ANSI_BRANCO, ANSI_RESET,				// total 9 a
+		ANSI_VERDEL, ANSI_RESET,				// border b c
+		ANSI_BVERDE, ANSI_VERDEL,				// fill bg e font, d e
+		ANSI_BPRETO, ANSI_PRETOL,				// empty bg e font, f g
+		ANSI_RESET, ANSI_VERDEL,				// zero bg e font, h, i
+		ANSI_RESET    							// reset end, j
+	);
+	printf("\t\t4:\n");
+	//       1      2  3      4  5      6 7  8 9      a  b  c d e     f g                                         h i  j
+	printf("\t\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.%s%s79 %%                                   %s%s]%s\n",
+		ANSI_LIGHT, ANSI_RESET,				// label 1 2
+		ANSI_AMARELOL, ANSI_RESET,				// title 3 4
+		ANSI_PRETOL, ANSI_RESET,				// count 5 6
+		ANSI_AMARELOL, ANSI_RESET,				// border: / 7 8
+		ANSI_BRANCO, ANSI_RESET,				// total 9 a
+		ANSI_AMARELOL, ANSI_RESET,				// border b c
+		ANSI_BLARANJA, ANSI_LIGHT,				// fill bg e font, d e
+		ANSI_BPRETO, ANSI_PRETOL,				// empty bg e font, f g
+		ANSI_RESET, ANSI_AMARELOL,				// zero bg e font, h, i
+		ANSI_RESET    							// reset end, j
+	);
+	printf("\t\t5:\n");
+	//       1      2  3      4  5      6 7  8 9      a  b  c d e     f g                                         h i  j
+	printf("\t\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.%s%s79 %%                                   %s%s]%s\n",
+		ANSI_LIGHT, ANSI_RESET,					// label 1 2
+		ANSI_ROSAL, ANSI_RESET,					// title 3 4
+		ANSI_PRETOL, ANSI_RESET,				// count 5 6
+		ANSI_ROSAL, ANSI_RESET,					// border: / 7 8
+		ANSI_BRANCO, ANSI_RESET,				// total 9 a
+		ANSI_ROSAL, ANSI_RESET,					// border b c
+		ANSI_BROSA, ANSI_LIGHT,					// fill bg e font, d e
+		ANSI_BBRANCO, ANSI_PRETOL,				// empty bg e font, f g
+		ANSI_RESET, ANSI_ROSAL,					// zero bg e font, h, i
+		ANSI_RESET    							// reset end, j
+	);
+	printf("\t\t6:\n");
+	//       1      2  3      4  5      6 7  8 9      a  b  c d e     f g                                         h i  j
+	printf("\t\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.%s%s79 %%                                   %s%s]%s\n",
+		ANSI_LIGHT, ANSI_RESET,					// label 1 2
+		ANSI_CIANOL, ANSI_RESET,					// title 3 4
+		ANSI_PRETOL, ANSI_RESET,				// count 5 6
+		ANSI_CIANOL, ANSI_RESET,					// border: / 7 8
+		ANSI_BRANCO, ANSI_RESET,				// total 9 a
+		ANSI_CIANOL, ANSI_RESET,					// border b c
+		ANSI_BCIANO, ANSI_LIGHT,					// fill bg e font, d e
+		ANSI_BBRANCO, ANSI_PRETOL,				// empty bg e font, f g
+		ANSI_RESET, ANSI_CIANOL,					// zero bg e font, h, i
+		ANSI_RESET    							// reset end, j
+	);
+	printf("\t\t7:\n");
+	//       1      2  3      4  5      6 7  8 9      a  b  c d e     f g                                         h i  j
+	printf("\t\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.%s%s79 %%                                   %s%s]%s\n",
+		ANSI_LIGHT, ANSI_RESET,				// label 1 2
+		ANSI_LIGHT, ANSI_RESET,				// title 3 4
+		ANSI_PRETOL, ANSI_RESET,				// count 5 6
+		ANSI_LIGHT, ANSI_RESET,				// border: / 7 8
+		ANSI_BRANCO, ANSI_RESET,				// total 9 a
+		ANSI_LIGHT, ANSI_RESET,				// border b c
+		ANSI_BBRANCO, ANSI_LIGHT,				// fill bg e font, d e
+		ANSI_BPRETO, ANSI_PRETOL,				// empty bg e font, f g
+		ANSI_RESET, ANSI_LIGHT,				// zero bg e font, h, i
+		ANSI_RESET    							// reset end, j
+	);
+	printf("\t\t8:\n");
+	//       1      2  3      4  5      6 7  8 9      a  b  c d e     f g                                         h i  j
+	printf("\t\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.%s%s79 %%                                   %s%s]%s\n",
+		ANSI_LIGHT, ANSI_RESET,				// label 1 2
+		ANSI_AZUL, ANSI_RESET,				// title 3 4
+		ANSI_PRETOL, ANSI_RESET,				// count 5 6
+		ANSI_LIGHT, ANSI_RESET,				// border: / 7 8
+		ANSI_BRANCO, ANSI_RESET,				// total 9 a
+		ANSI_LIGHT, ANSI_RESET,				// border b c
+		ANSI_BAZUL, ANSI_LIGHT,				// fill bg e font, d e
+		ANSI_BPRETO, ANSI_PRETOL,				// empty bg e font, f g
+		ANSI_RESET, ANSI_LIGHT,				// zero bg e font, h, i
+		ANSI_RESET    							// reset end, j
+	);
+	printf("\t\t9:\n");
+	//       1      2  3      4  5      6 7  8 9      a  b  c d e     f g                                         h i  j
+	printf("\t\t%sLabel%s %stitle%s %s-----%s%s/%s%s.....%s %s[%s%s%s 15.%s%s79 %%                                   %s%s]%s\n",
+		ANSI_LIGHT, ANSI_RESET,				// label 1 2
+		ANSI_CIANOL, ANSI_RESET,				// title 3 4
+		ANSI_PRETOL, ANSI_RESET,				// count 5 6
+		ANSI_LIGHT, ANSI_RESET,				// border: / 7 8
+		ANSI_BRANCO, ANSI_RESET,				// total 9 a
+		ANSI_LIGHT, ANSI_RESET,				// border b c
+		ANSI_BCIANO, ANSI_LIGHT,				// fill bg e font, d e
+		ANSI_BPRETO, ANSI_PRETOL,				// empty bg e font, f g
+		ANSI_RESET, ANSI_LIGHT,				// zero bg e font, h, i
+		ANSI_RESET    							// reset end, j
+	);
+	printf("\n");
+
 	printf("\n");
 	exit(1);
 }
@@ -106,8 +218,8 @@ int main_shloading(const char *progname, const int argc, const char **argv){
 	size_t size;
 
 	// cores
-	char *color_label = NULL;
-	char *color_title = NULL;
+	char *color_stitle = NULL;
+	char *color_slabel = NULL;
 	char *color_count = NULL;
 	char *color_total = NULL;
 	char *color_border = NULL;
@@ -185,11 +297,11 @@ int main_shloading(const char *progname, const int argc, const char **argv){
 
 	//-------------------------- inicio escolher estilo
 
-		if(style < 1 || style > 3) style = 1;
+		if(style < 1 || style > 9) style = 1;
 		switch(style){
 			case 1:
-				color_label = ANSI_LIGHT;
-				color_title = ANSI_CIANOL;
+				color_stitle = ANSI_LIGHT;
+				color_slabel = ANSI_CIANOL;
 				color_count = ANSI_PRETOL;
 				color_total = ANSI_BRANCO;
 				color_border = ANSI_LIGHT;
@@ -200,8 +312,8 @@ int main_shloading(const char *progname, const int argc, const char **argv){
 				break;
 
 			case 2:
-				color_label = ANSI_VERMELHOL;
-				color_title = ANSI_AMARELOL;
+				color_stitle = ANSI_VERMELHOL;
+				color_slabel = ANSI_AMARELOL;
 				color_count = ANSI_PRETOL;
 				color_total = ANSI_PRETOL;
 				color_border = ANSI_AMARELOL;
@@ -212,13 +324,85 @@ int main_shloading(const char *progname, const int argc, const char **argv){
 				break;
 
 			case 3:
-				color_label = ANSI_VERDEL;
-				color_title = ANSI_LIGHT;
+				color_stitle = ANSI_LIGHT;
+				color_slabel = ANSI_VERDEL;
 				color_count = ANSI_PRETOL;
 				color_total = ANSI_BRANCO;
 				color_border = ANSI_VERDEL;
 				color_fill_bg = ANSI_BVERDE;
 				color_fill_font = ANSI_VERDEL;
+				color_empty_bg = ANSI_BPRETO;
+				color_empty_font = ANSI_PRETOL;
+				break;
+
+			case 4:
+				color_stitle = ANSI_LIGHT;
+				color_slabel = ANSI_AMARELOL;
+				color_count = ANSI_PRETOL;
+				color_total = ANSI_BRANCO;
+				color_border = ANSI_AMARELOL;
+				color_fill_bg = ANSI_BLARANJA;
+				color_fill_font = ANSI_LIGHT;
+				color_empty_bg = ANSI_BPRETO;
+				color_empty_font = ANSI_PRETOL;
+				break;
+
+			case 5:
+				color_stitle = ANSI_LIGHT;
+				color_slabel = ANSI_ROSAL;
+				color_count = ANSI_PRETOL;
+				color_total = ANSI_BRANCO;
+				color_border = ANSI_ROSAL;
+				color_fill_bg = ANSI_BROSA;
+				color_fill_font = ANSI_LIGHT;
+				color_empty_bg = ANSI_BBRANCO;
+				color_empty_font = ANSI_PRETOL;
+				break;
+
+			case 6:
+				color_stitle = ANSI_LIGHT;
+				color_slabel = ANSI_CIANOL;
+				color_count = ANSI_PRETOL;
+				color_total = ANSI_BRANCO;
+				color_border = ANSI_CIANOL;
+				color_fill_bg = ANSI_BCIANO;
+				color_fill_font = ANSI_LIGHT;
+				color_empty_bg = ANSI_BBRANCO;
+				color_empty_font = ANSI_PRETOL;
+				break;
+
+			case 7:
+				color_stitle = ANSI_LIGHT;
+				color_slabel = ANSI_LIGHT;
+				color_count = ANSI_PRETOL;
+				color_total = ANSI_BRANCO;
+				color_border = ANSI_LIGHT;
+				color_fill_bg = ANSI_BBRANCO;
+				color_fill_font = ANSI_LIGHT;
+				color_empty_bg = ANSI_BPRETO;
+				color_empty_font = ANSI_PRETOL;
+				break;
+
+			case 8:
+				color_stitle = ANSI_LIGHT;
+				color_slabel = ANSI_AZUL;
+				color_count = ANSI_PRETOL;
+				color_total = ANSI_BRANCO;
+				color_border = ANSI_LIGHT;
+				color_fill_bg = ANSI_BAZUL;
+				color_fill_font = ANSI_LIGHT;
+				color_empty_bg = ANSI_BPRETO;
+				color_empty_font = ANSI_PRETOL;
+				break;
+
+			case 9:
+				color_stitle = ANSI_LIGHT;
+				color_slabel = ANSI_CIANOL;
+				color_count = ANSI_PRETOL;
+				color_total = ANSI_BRANCO;
+				color_border = ANSI_LIGHT;
+				color_fill_bg = ANSI_BCIANO;
+				color_fill_font = ANSI_LIGHT;
 				color_empty_bg = ANSI_BPRETO;
 				color_empty_font = ANSI_PRETOL;
 				break;
@@ -308,9 +492,9 @@ int main_shloading(const char *progname, const int argc, const char **argv){
 
 		// Desenhar parte fixa
 			// label
-			if(llen) printf("%s%s%s", color_label, label, ANSI_RESET);
+			if(llen) printf("%s%s%s", color_stitle, label, ANSI_RESET);
 			// titulo
-			if(tlen) printf("%s%s%s", color_title, title, ANSI_RESET);
+			if(tlen) printf("%s%s%s", color_slabel, title, ANSI_RESET);
 
 			// contadores: -----/.....
 			printf("%s%5d%s%s/%s%s%5d%s ", color_count, line_count, ANSI_RESET, color_border, ANSI_RESET, color_total, line_total, ANSI_RESET);
@@ -409,3 +593,37 @@ int main_shloading(const char *progname, const int argc, const char **argv){
 	return 0;
 }
 
+
+/*
+
+	printf("\n");
+	printf("\n");
+	printf("BG ANSI_BPRETO.........: %s%steste             %s\n", ANSI_BPRETO, ANSI_LIGHT, ANSI_RESET);
+	printf("BG ANSI_BVERMELHO......: %s%steste             %s\n", ANSI_BVERMELHO, ANSI_LIGHT, ANSI_RESET);
+	printf("BG ANSI_BVERDE.........: %s%steste             %s\n", ANSI_BVERDE, ANSI_LIGHT, ANSI_RESET);
+	printf("BG ANSI_BLARANJA.......: %s%steste             %s\n", ANSI_BLARANJA, ANSI_LIGHT, ANSI_RESET);
+	printf("BG ANSI_BAZUL..........: %s%steste             %s\n", ANSI_BAZUL, ANSI_LIGHT, ANSI_RESET);
+	printf("BG ANSI_BROSA..........: %s%steste             %s\n", ANSI_BROSA, ANSI_LIGHT, ANSI_RESET);
+	printf("BG ANSI_BCIANO.........: %s%steste             %s\n", ANSI_BCIANO, ANSI_LIGHT, ANSI_RESET);
+	printf("BG ANSI_BBRANCO........: %s%steste             %s\n", ANSI_BBRANCO, ANSI_LIGHT, ANSI_RESET);
+	printf("BG ANSI_BLIGHT.........: %s%steste             %s\n", ANSI_BLIGHT, ANSI_LIGHT, ANSI_RESET);
+	printf("\n");
+	printf("FG ANSI_PRETO..........: %steste             %s\n", ANSI_PRETO, ANSI_RESET);
+	printf("FG ANSI_VERMELHO.......: %steste             %s\n", ANSI_VERMELHO, ANSI_RESET);
+	printf("FG ANSI_VERDE..........: %steste             %s\n", ANSI_VERDE, ANSI_RESET);
+	printf("FG ANSI_AMARELO........: %steste             %s\n", ANSI_AMARELO, ANSI_RESET);
+	printf("FG ANSI_AZUL...........: %steste             %s\n", ANSI_AZUL, ANSI_RESET);
+	printf("FG ANSI_ROSA...........: %steste             %s\n", ANSI_ROSA, ANSI_RESET);
+	printf("FG ANSI_CIANO..........: %steste             %s\n", ANSI_CIANO, ANSI_RESET);
+	printf("FG ANSI_BRANCO.........: %steste             %s\n", ANSI_BRANCO, ANSI_RESET);
+	printf("FG ANSI_LIGHT..........: %steste             %s\n", ANSI_LIGHT, ANSI_RESET);
+	printf("\n");
+	printf("FG ANSI_PRETOL..........: %steste             %s\n", ANSI_PRETOL, ANSI_RESET);
+	printf("FG ANSI_VERMELHOL.......: %steste             %s\n", ANSI_VERMELHOL, ANSI_RESET);
+	printf("FG ANSI_VERDEL..........: %steste             %s\n", ANSI_VERDEL, ANSI_RESET);
+	printf("FG ANSI_AMARELOL........: %steste             %s\n", ANSI_AMARELOL, ANSI_RESET);
+	printf("FG ANSI_AZULL...........: %steste             %s\n", ANSI_AZULL, ANSI_RESET);
+	printf("FG ANSI_ROSAL...........: %steste             %s\n", ANSI_ROSAL, ANSI_RESET);
+	printf("FG ANSI_CIANOL..........: %steste             %s\n", ANSI_CIANOL, ANSI_RESET);
+	printf("FG ANSI_BRANCOL.........: %steste             %s\n", ANSI_BRANCOL, ANSI_RESET);
+*/
