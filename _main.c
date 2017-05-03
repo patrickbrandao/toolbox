@@ -2,7 +2,7 @@
 	toolbox - main
 */
 
-char *copyright = "Patrick Brandao <patrickbrandao@gmail.com>, Marcio Araujo <marcioxmarcio@gmail.com>. Todos os direitos reservados.";
+char *copyright = "Patrick Brandao <patrickbrandao@gmail.com>. Todos os direitos reservados.";
 
 void help(){
 	printf("\n");
