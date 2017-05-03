@@ -7,7 +7,7 @@
 	printf("setethmac\n");
 	printf("Altera o endereco MAC da interface de rede\n");
 	printf("\n");
-	printf("Autores: Patrick Brandao <patrickbrandao@gmail.com>, Marcio Araujo <marcioxmarcio@gmail.com>, todos os direitos reservados\n");
+	printf("Autor: Patrick Brandao <patrickbrandao@gmail.com>. todos os direitos reservados\n");
 	printf("\n");
 	printf("Use: setethmac (ethX[.nnn]) (new mac address)\n");
 	printf("\n");
