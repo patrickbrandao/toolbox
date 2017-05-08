@@ -61,6 +61,7 @@
 
 
 	shellcolor/shloading
+	shellcolor/shbar
 
 # Datetime
 	datetime/timestamp
